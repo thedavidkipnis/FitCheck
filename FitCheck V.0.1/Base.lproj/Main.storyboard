@@ -27,15 +27,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-0u-IvR">
                                 <rect key="frame" x="68.5" y="752" width="277" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctt-eg-bWT" userLabel="Socials Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctt-eg-bWT" userLabel="Socials Button">
                                         <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="53" id="LwR-5S-wTf"/>
                                             <constraint firstAttribute="height" constant="43" id="qyz-gk-aT6"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
                                         <rect key="frame" x="79" y="2.5" width="47" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Uq2-Rb-1dX"/>
@@ -43,7 +46,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-0O-CDx" userLabel="Bag Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-0O-CDx" userLabel="Bag Button">
                                         <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="47" id="0nh-6G-DzG"/>
@@ -51,7 +54,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="bag.fill" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
                                         <rect key="frame" x="232" y="4" width="45" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BBT-Ke-NUv"/>
