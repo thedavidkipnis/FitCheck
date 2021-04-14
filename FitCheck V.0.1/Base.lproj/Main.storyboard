@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2S-Nn-EAe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Main Page" customClass="ViewController" customModule="FitCheck_V_0_1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController restorationIdentifier="home" storyboardIdentifier="home" id="BYZ-38-t0r" userLabel="Main Page" customClass="ViewController" customModule="FitCheck_V_0_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="home" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-0N-UEp">
-                                <rect key="frame" x="50" y="734" width="314" height="80"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="50" y="738" width="314" height="76"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
@@ -25,7 +27,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-0u-IvR">
-                                <rect key="frame" x="68.5" y="752" width="277" height="45"/>
+                                <rect key="frame" x="68.5" y="753" width="277" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctt-eg-bWT" userLabel="Socials Button">
                                         <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
@@ -35,11 +37,12 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                         <connections>
+                                            <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wo3-YL-cVR"/>
                                             <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
-                                        <rect key="frame" x="79" y="2.5" width="47" height="40"/>
+                                        <rect key="frame" x="79" y="3" width="47" height="39.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Uq2-Rb-1dX"/>
                                             <constraint firstAttribute="width" constant="47" id="jzI-d4-AqC"/>
@@ -53,6 +56,9 @@
                                             <constraint firstAttribute="height" constant="45" id="CoK-Hx-WFL"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="ClosetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ec6-c0-iK1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
                                         <rect key="frame" x="232" y="4" width="45" height="37.5"/>
@@ -61,34 +67,296 @@
                                             <constraint firstAttribute="width" constant="45" id="RcF-75-IzX"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="LikesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaU-kb-1Kw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0015532842755116433" green="0.15210284787884207" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the main page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-HO-u5k" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="123" y="402" width="161" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HsR-om-Esc"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IE7-2B-CFd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="L5A-sn-5ms"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
-                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="690" id="ZLP-LR-VQR"/>
+                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="650" id="ZLP-LR-VQR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="dLV-8Q-KHw"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="veB-0U-WHo"/>
-                            <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="708" id="zEE-yH-Ncu"/>
+                            <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="665" id="zEE-yH-Ncu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yFj-eu-sFH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Likes Page-->
+        <scene sceneID="org-gD-Na4">
+            <objects>
+                <viewController restorationIdentifier="likes" storyboardIdentifier="likes" id="fF0-z3-rIF" customClass="LikesPage" customModule="FitCheck_V_0_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="likes" id="4Eg-qh-kcI" customClass="LikesPage">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-bC-JjC">
+                                <rect key="frame" x="50" y="753" width="314" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-xn-l1M">
+                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMy-1I-8oo" userLabel="Socials Button">
+                                                <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="53" id="DWi-Zi-4v6"/>
+                                                    <constraint firstAttribute="height" constant="43" id="U2X-BI-VEk"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc0-X8-HqB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgS-wo-XJS" userLabel="Main Button">
+                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="9bw-lI-g3n"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Hb0-9V-LOC"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXf-nL-fwm" userLabel="Bag Button">
+                                                <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="Ait-q3-cFq"/>
+                                                    <constraint firstAttribute="height" constant="45" id="Kta-34-1nN"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn3-Ce-bPq" userLabel="Likes Button">
+                                                <rect key="frame" x="232" y="4" width="45" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="2Vb-ij-lFh"/>
+                                                    <constraint firstAttribute="height" constant="40" id="gkT-l2-SVY"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the likes page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a85-sV-Jjd" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="159" y="396" width="159" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gz6-hu-iQW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J44-aS-fNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.9275362318842" y="126.5625"/>
+        </scene>
+        <!--Closet-->
+        <scene sceneID="haO-s4-zQD">
+            <objects>
+                <viewController restorationIdentifier="closet" storyboardIdentifier="closet" id="Fv8-Z9-koX" customClass="Closet" customModule="FitCheck_V_0_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="closet" id="k7t-8J-u9P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFk-SM-fbg">
+                                <rect key="frame" x="50" y="758" width="314" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-Br-kN3">
+                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-kP-y0n" userLabel="Socials Button">
+                                                <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="DEB-cH-rI1"/>
+                                                    <constraint firstAttribute="width" constant="53" id="hkl-ZS-KwP"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vu7-FK-uy1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-FL-CPD" userLabel="Main Button">
+                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="hbN-dv-HPY"/>
+                                                    <constraint firstAttribute="height" constant="40" id="tMy-7r-ONw"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-D1-g2n" userLabel="Bag Button">
+                                                <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="6ot-6f-BQe"/>
+                                                    <constraint firstAttribute="height" constant="45" id="OSq-C8-mBF"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwd-rk-UOv" userLabel="Likes Button">
+                                                <rect key="frame" x="232" y="4" width="45" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="HtL-SY-39x"/>
+                                                    <constraint firstAttribute="height" constant="40" id="esL-Gv-yfx"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the closet page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-D9-B3z" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="134" y="392" width="169" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pgw-gf-6dd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80g-yb-x7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="136"/>
+        </scene>
+        <!--Socials Page-->
+        <scene sceneID="ant-Mq-iFh">
+            <objects>
+                <viewController restorationIdentifier="social" storyboardIdentifier="social" id="jIH-P5-LSM" customClass="SocialsPage" customModule="FitCheck_V_0_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="social" id="Ayq-Ii-1b2" customClass="SocialsPage">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-gq-WBu">
+                                <rect key="frame" x="50" y="744" width="314" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-7r-b4A">
+                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-Fq-skk" userLabel="Socials Button">
+                                                <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="GAd-Xe-WYI"/>
+                                                    <constraint firstAttribute="width" constant="53" id="v1J-pt-GHv"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRx-V1-lo7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-Z8-2gv" userLabel="Main Button">
+                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="AAo-n2-HWc"/>
+                                                    <constraint firstAttribute="height" constant="40" id="EyB-7e-AUk"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnE-A0-bBS" userLabel="Bag Button">
+                                                <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="5eZ-j4-GgW"/>
+                                                    <constraint firstAttribute="height" constant="45" id="aAv-4o-ZHS"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ck-WG-A0U" userLabel="Likes Button">
+                                                <rect key="frame" x="232" y="4" width="45" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0Ts-ac-bD8"/>
+                                                    <constraint firstAttribute="width" constant="45" id="kju-jP-kGu"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the socials page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-59-ZHv" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="131" y="418" width="174" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cg4-vI-C2V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1la-93-c5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3127" y="147"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="voi-HW-j74">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d2S-Nn-EAe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TGf-6i-kbQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oeZ-5n-zCl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXZ-dV-o9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bag.fill" catalog="system" width="64" height="64"/>
-        <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="person.2.fill" catalog="system" width="64" height="40"/>
-        <image name="square.fill.on.square.fill" catalog="system" width="64" height="56"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="square.fill.on.square.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

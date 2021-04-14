@@ -18,10 +18,35 @@ class ViewController: UIViewController {
 //        setButtonBackGround(view: sender, on:  UIImage(imageLiteralResourceName: "heart.fill"), off:  UIImage(imageLiteralResourceName: "person.2"), onOffStatus: isOn)
     }
     
+    
+    @IBAction func SocialClick(_ sender: Any) {
+        print("Socials Button Pressed")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "social") as! SocialsPage
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    
+    @IBAction func LikesClick(_ sender: Any) {
+        print("Likes Button Pressed")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "likes") as! LikesPage
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    
+    @IBAction func ClosetClick(_ sender: Any) {
+        print("Closet Button Pressed")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "closet") as! Closet
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    
     func setButtonBackGround(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool ) {
          switch onOffStatus {
               case true:
-    // Chnage backgroundImage to hart image
+    // Change backgroundImage to heart image
                    view.setImage(on, for: .normal)
     // Test
               print("Button Pressed")
