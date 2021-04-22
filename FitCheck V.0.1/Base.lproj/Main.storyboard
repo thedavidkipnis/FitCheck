@@ -17,6 +17,63 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-0N-UEp">
                                 <rect key="frame" x="50" y="734" width="314" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-0u-IvR">
+                                        <rect key="frame" x="18.5" y="17" width="277" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctt-eg-bWT" userLabel="Socials Button">
+                                                <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="53" id="LwR-5S-wTf"/>
+                                                    <constraint firstAttribute="height" constant="43" id="qyz-gk-aT6"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="animateButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PVf-oU-uIF"/>
+                                                    <action selector="socialsButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
+                                                <rect key="frame" x="79" y="2.5" width="47" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Uq2-Rb-1dX"/>
+                                                    <constraint firstAttribute="width" constant="47" id="jzI-d4-AqC"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="animateButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gfv-TW-Xt1"/>
+                                                    <action selector="mainButtonPress:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="CIo-Ye-h2S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-0O-CDx" userLabel="Bag Button">
+                                                <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="0nh-6G-DzG"/>
+                                                    <constraint firstAttribute="height" constant="45" id="CoK-Hx-WFL"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="animateButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xNf-fO-rMX"/>
+                                                    <action selector="closetButtonPress:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="89z-NH-bWI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
+                                                <rect key="frame" x="232" y="4" width="45" height="37.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="BBT-Ke-NUv"/>
+                                                    <constraint firstAttribute="width" constant="45" id="RcF-75-IzX"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="animateButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vnb-WV-EG1"/>
+                                                    <action selector="likesButtonPress:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="3ax-5g-4P8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0015532842755116433" green="0.15210284787884207" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -24,48 +81,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-0u-IvR">
-                                <rect key="frame" x="68.5" y="752" width="277" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctt-eg-bWT" userLabel="Socials Button">
-                                        <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="53" id="LwR-5S-wTf"/>
-                                            <constraint firstAttribute="height" constant="43" id="qyz-gk-aT6"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
-                                        <rect key="frame" x="79" y="2.5" width="47" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Uq2-Rb-1dX"/>
-                                            <constraint firstAttribute="width" constant="47" id="jzI-d4-AqC"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-0O-CDx" userLabel="Bag Button">
-                                        <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="47" id="0nh-6G-DzG"/>
-                                            <constraint firstAttribute="height" constant="45" id="CoK-Hx-WFL"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="bag.fill" catalog="system"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
-                                        <rect key="frame" x="232" y="4" width="45" height="37.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="BBT-Ke-NUv"/>
-                                            <constraint firstAttribute="width" constant="45" id="RcF-75-IzX"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="heart.fill" catalog="system"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0015532842755116433" green="0.15210284787884207" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -74,11 +89,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="L5A-sn-5ms"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="690" id="ZLP-LR-VQR"/>
-                            <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="veB-0U-WHo"/>
-                            <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="708" id="zEE-yH-Ncu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="closetButton" destination="A9b-0O-CDx" id="CAt-tR-yUT"/>
+                        <outlet property="likesButton" destination="f1G-T8-p6f" id="rmL-ak-bAr"/>
+                        <outlet property="mainButton" destination="aEP-IL-cZb" id="CE7-zb-ZmQ"/>
+                        <outlet property="socialsButton" destination="ctt-eg-bWT" id="XeO-ay-BaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
