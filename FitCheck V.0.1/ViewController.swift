@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         mainButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "social") as! SocialsPage
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     @IBAction func mainButtonPress(_ sender: UIButton) {
@@ -42,6 +45,7 @@ class ViewController: UIViewController {
         socialsButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
+        
     }
     
     @IBAction func closetButtonPress(_ sender: UIButton) {
@@ -50,6 +54,9 @@ class ViewController: UIViewController {
         mainButton.tintColor = UIColor.white
         socialsButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "closet") as! Closet
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     @IBAction func likesButtonPress(_ sender: UIButton) {
@@ -58,6 +65,9 @@ class ViewController: UIViewController {
         mainButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         socialsButton.tintColor = UIColor.white
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "likes") as! LikesPage
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     
