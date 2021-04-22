@@ -17,7 +17,10 @@ class LikesPage: UIViewController {
         print("Socials Button Pressed")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "social") as! SocialsPage
-        self.present(nextViewController, animated:true, completion:nil)
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+            nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })
     }
     
     
@@ -25,7 +28,10 @@ class LikesPage: UIViewController {
         print("Home Button Pressed")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "home") as! ViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+            nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })
     }
     
     
@@ -33,7 +39,10 @@ class LikesPage: UIViewController {
         print("Closet Button Pressed")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "closet") as! Closet
-        self.present(nextViewController, animated:true, completion:nil)
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+        nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })
     }
 }
 

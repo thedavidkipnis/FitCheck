@@ -34,10 +34,13 @@ class ViewController: UIViewController {
         mainButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
+        print("Triggered")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "social") as! SocialsPage
-        self.present(nextViewController, animated:true, completion:nil)
-    }
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+            nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })    }
     
     @IBAction func mainButtonPress(_ sender: UIButton) {
         isOn.toggle()
@@ -45,7 +48,7 @@ class ViewController: UIViewController {
         socialsButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
-        
+        //TODO: add nav func
     }
     
     @IBAction func closetButtonPress(_ sender: UIButton) {
@@ -56,8 +59,10 @@ class ViewController: UIViewController {
         likesButton.tintColor = UIColor.white
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "closet") as! Closet
-        self.present(nextViewController, animated:true, completion:nil)
-    }
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+            nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })}
     
     @IBAction func likesButtonPress(_ sender: UIButton) {
         isOn.toggle()
@@ -67,8 +72,10 @@ class ViewController: UIViewController {
         socialsButton.tintColor = UIColor.white
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "likes") as! LikesPage
-        self.present(nextViewController, animated:true, completion:nil)
-    }
+        self.view.window?.rootViewController = nextViewController
+        self.present(nextViewController, animated: true, completion: {
+            nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })}
     
     
     @IBOutlet weak var socialsButton: UIButton!

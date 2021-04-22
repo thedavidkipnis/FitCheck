@@ -37,6 +37,7 @@
                                         <connections>
                                             <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wo3-YL-cVR"/>
                                             <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
+                                            <action selector="socialsButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf2-d9-V1o"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
@@ -56,6 +57,7 @@
                                         <state key="normal" backgroundImage="bag.fill" catalog="system"/>
                                         <connections>
                                             <action selector="ClosetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ec6-c0-iK1"/>
+                                            <action selector="closetButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mn9-n8-927"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
@@ -67,6 +69,7 @@
                                         <state key="normal" backgroundImage="heart.fill" catalog="system"/>
                                         <connections>
                                             <action selector="LikesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaU-kb-1Kw"/>
+                                            <action selector="likesButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7N-cB-FFq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,6 +96,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="yFj-eu-sFH"/>
+                    <connections>
+                        <outlet property="closetButton" destination="A9b-0O-CDx" id="r97-sI-eda"/>
+                        <outlet property="likesButton" destination="f1G-T8-p6f" id="axk-aW-L3N"/>
+                        <outlet property="mainButton" destination="aEP-IL-cZb" id="5Ji-WX-lHG"/>
+                        <outlet property="socialsButton" destination="ctt-eg-bWT" id="NgY-lW-nLj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,6 +130,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                                 <connections>
+                                                    <action selector="SocialClick:" destination="fF0-z3-rIF" eventType="touchUpInside" id="keh-zN-OCf"/>
                                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc0-X8-HqB"/>
                                                 </connections>
                                             </button>
@@ -131,6 +141,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="Hb0-9V-LOC"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="HomeClick:" destination="fF0-z3-rIF" eventType="touchUpInside" id="79A-dO-aBj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXf-nL-fwm" userLabel="Bag Button">
                                                 <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
@@ -139,6 +152,9 @@
                                                     <constraint firstAttribute="height" constant="45" id="Kta-34-1nN"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="ClosetClick:" destination="fF0-z3-rIF" eventType="touchUpInside" id="Qb5-BG-dkf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn3-Ce-bPq" userLabel="Likes Button">
                                                 <rect key="frame" x="232" y="4" width="45" height="37.5"/>
@@ -197,6 +213,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                                 <connections>
+                                                    <action selector="SocialClick:" destination="Fv8-Z9-koX" eventType="touchUpInside" id="dfM-bB-MVQ"/>
                                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vu7-FK-uy1"/>
                                                 </connections>
                                             </button>
@@ -207,6 +224,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="tMy-7r-ONw"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="HomeClick:" destination="Fv8-Z9-koX" eventType="touchUpInside" id="oMQ-Qx-bbZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-D1-g2n" userLabel="Bag Button">
                                                 <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
@@ -223,6 +243,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="esL-Gv-yfx"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="LikesClick:" destination="Fv8-Z9-koX" eventType="touchUpInside" id="mPV-8J-XKE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -283,6 +306,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="EyB-7e-AUk"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="HomeClick:" destination="jIH-P5-LSM" eventType="touchUpInside" id="7My-RM-9IS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnE-A0-bBS" userLabel="Bag Button">
                                                 <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
@@ -291,6 +317,9 @@
                                                     <constraint firstAttribute="height" constant="45" id="aAv-4o-ZHS"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="bag.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="ClosetClick:" destination="jIH-P5-LSM" eventType="touchUpInside" id="wS5-Wy-g78"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ck-WG-A0U" userLabel="Likes Button">
                                                 <rect key="frame" x="232" y="4" width="45" height="37.5"/>
@@ -299,6 +328,9 @@
                                                     <constraint firstAttribute="width" constant="45" id="kju-jP-kGu"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="LikesClick:" destination="jIH-P5-LSM" eventType="touchUpInside" id="kUD-QH-Nl5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
