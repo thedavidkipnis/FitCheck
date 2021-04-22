@@ -35,9 +35,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wo3-YL-cVR"/>
-                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn9-SA-y9B"/>
-                                            <action selector="socialsButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf2-d9-V1o"/>
+                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf2-d9-V1o"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
@@ -47,6 +45,9 @@
                                             <constraint firstAttribute="width" constant="47" id="jzI-d4-AqC"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="square.fill.on.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="mainButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aCr-4b-6pX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-0O-CDx" userLabel="Bag Button">
                                         <rect key="frame" x="155" y="-0.5" width="47" height="44"/>
@@ -56,8 +57,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="bag.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="ClosetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ec6-c0-iK1"/>
-                                            <action selector="closetButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mn9-n8-927"/>
+                                            <action selector="ClosetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mn9-n8-927"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-T8-p6f" userLabel="Likes Button">
@@ -68,8 +68,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="heart.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="LikesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaU-kb-1Kw"/>
-                                            <action selector="likesButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7N-cB-FFq"/>
+                                            <action selector="LikesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7N-cB-FFq"/>
                                         </connections>
                                     </button>
                                 </subviews>

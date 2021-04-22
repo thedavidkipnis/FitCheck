@@ -28,22 +28,22 @@ class ViewController: UIViewController {
         )
     }
     
-    @IBAction func socialsButtonPress(_ sender: UIButton) {
+    @IBAction func buttonPress(_ sender: UIButton) {
         isOn.toggle()
         sender.tintColor = UIColor.systemYellow
         mainButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
         likesButton.tintColor = UIColor.white
-        print("Triggered")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "social") as! SocialsPage
         self.view.window?.rootViewController = nextViewController
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
-        })    }
+        })}
     
     @IBAction func mainButtonPress(_ sender: UIButton) {
         isOn.toggle()
+        print("Trig")
         sender.tintColor = UIColor.systemYellow
         socialsButton.tintColor = UIColor.white
         closetButton.tintColor = UIColor.white
@@ -51,8 +51,9 @@ class ViewController: UIViewController {
         //TODO: add nav func
     }
     
-    @IBAction func closetButtonPress(_ sender: UIButton) {
+    @IBAction func ClosetClick(_ sender: UIButton) {
         isOn.toggle()
+        print("Trig")
         sender.tintColor = UIColor.systemYellow
         mainButton.tintColor = UIColor.white
         socialsButton.tintColor = UIColor.white
@@ -62,9 +63,11 @@ class ViewController: UIViewController {
         self.view.window?.rootViewController = nextViewController
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
-        })}
+        })
+
+    }
     
-    @IBAction func likesButtonPress(_ sender: UIButton) {
+    @IBAction func LikesClick(_ sender: UIButton) {
         isOn.toggle()
         sender.tintColor = UIColor.systemYellow
         mainButton.tintColor = UIColor.white
