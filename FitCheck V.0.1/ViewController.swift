@@ -64,7 +64,6 @@ class ViewController: UIViewController {
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })
-
     }
     
     @IBAction func LikesClick(_ sender: UIButton) {
@@ -79,7 +78,6 @@ class ViewController: UIViewController {
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })}
-    
     
     @IBOutlet weak var socialsButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
