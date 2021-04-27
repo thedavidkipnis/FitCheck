@@ -11,6 +11,24 @@ import UIKit
 class Closet: UIViewController {
     override func viewDidLoad() {
         print("closet page Loaded")
+        animateButton(sender: closetButton)
+        closetButton.tintColor = UIColor.systemYellow
+    }
+    
+    @IBAction func animateButton(sender: UIButton) {
+
+        sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+
+        UIView.animate(withDuration: 0.5,
+                                   delay: 0,
+                                   usingSpringWithDamping: CGFloat(0.20),
+                                   initialSpringVelocity: CGFloat(6.0),
+                                   options: UIView.AnimationOptions.allowUserInteraction,
+                                   animations: {
+                                    sender.transform = CGAffineTransform.identity
+            },
+                                   completion: { Void in()  }
+        )
     }
     
     @IBAction func SocialClick(_ sender: Any) {
@@ -41,5 +59,10 @@ class Closet: UIViewController {
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })    }
+    
+    @IBOutlet weak var socialsButton: UIButton!
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var closetButton: UIButton!
+    @IBOutlet weak var likesButton: UIButton!
 }
 

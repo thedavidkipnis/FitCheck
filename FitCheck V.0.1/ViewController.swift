@@ -43,21 +43,10 @@ class ViewController: UIViewController {
     
     @IBAction func mainButtonPress(_ sender: UIButton) {
         isOn.toggle()
-        print("Trig")
-        sender.tintColor = UIColor.systemYellow
-        socialsButton.tintColor = UIColor.white
-        closetButton.tintColor = UIColor.white
-        likesButton.tintColor = UIColor.white
-        //TODO: add nav func
     }
     
     @IBAction func ClosetClick(_ sender: UIButton) {
         isOn.toggle()
-        print("Trig")
-        sender.tintColor = UIColor.systemYellow
-        mainButton.tintColor = UIColor.white
-        socialsButton.tintColor = UIColor.white
-        likesButton.tintColor = UIColor.white
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "closet") as! Closet
         self.view.window?.rootViewController = nextViewController
@@ -68,10 +57,6 @@ class ViewController: UIViewController {
     
     @IBAction func LikesClick(_ sender: UIButton) {
         isOn.toggle()
-        sender.tintColor = UIColor.systemYellow
-        mainButton.tintColor = UIColor.white
-        closetButton.tintColor = UIColor.white
-        socialsButton.tintColor = UIColor.white
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "likes") as! LikesPage
         self.view.window?.rootViewController = nextViewController
@@ -86,6 +71,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateButton(sender: mainButton)
+        mainButton.tintColor = UIColor.systemYellow
     }
 }
 

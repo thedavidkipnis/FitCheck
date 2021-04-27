@@ -83,15 +83,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bt4-0u-IvR" secondAttribute="bottom" constant="64" id="12k-AU-8Bt"/>
+                            <constraint firstItem="bt4-0u-IvR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68.5" id="3cj-jn-NPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bt4-0u-IvR" secondAttribute="trailing" constant="68.5" id="6yg-pZ-1LS"/>
+                            <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="753" id="FEv-Kh-eZe"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HsR-om-Esc"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IE7-2B-CFd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="L5A-sn-5ms"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
-                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="650" id="ZLP-LR-VQR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="i8e-hi-uQb"/>
-                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="650" id="ns6-R4-QGv"/>
-                            <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="veB-0U-WHo"/>
-                            <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="665" id="zEE-yH-Ncu"/>
+                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="738" id="ns6-R4-QGv"/>
+                            <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zt6-Sj-9Oe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -118,8 +119,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-bC-JjC">
                                 <rect key="frame" x="50" y="738" width="314" height="76"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-xn-l1M">
-                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-xn-l1M">
+                                        <rect key="frame" x="18.5" y="15" width="277" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMy-1I-8oo" userLabel="Socials Button">
                                                 <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
@@ -168,6 +169,13 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FUO-xn-l1M" firstAttribute="top" secondItem="OAX-bC-JjC" secondAttribute="top" constant="15" id="1FS-5g-K3i"/>
+                                    <constraint firstItem="FUO-xn-l1M" firstAttribute="leading" secondItem="OAX-bC-JjC" secondAttribute="leading" constant="18.5" id="69Q-Zd-4QD"/>
+                                    <constraint firstItem="FUO-xn-l1M" firstAttribute="centerX" secondItem="OAX-bC-JjC" secondAttribute="centerX" id="6Wg-G7-Cc4"/>
+                                    <constraint firstAttribute="bottom" secondItem="FUO-xn-l1M" secondAttribute="bottom" constant="16" id="CCv-fM-CHA"/>
+                                    <constraint firstAttribute="trailing" secondItem="FUO-xn-l1M" secondAttribute="trailing" constant="18.5" id="r1G-gJ-B4b"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
@@ -191,6 +199,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gz6-hu-iQW"/>
                     </view>
+                    <connections>
+                        <outlet property="closetButton" destination="dXf-nL-fwm" id="0s3-8Y-DNg"/>
+                        <outlet property="likesButton" destination="bn3-Ce-bPq" id="lnA-A2-Bki"/>
+                        <outlet property="mainButton" destination="CgS-wo-XJS" id="tTH-nQ-eFd"/>
+                        <outlet property="socialsButton" destination="kMy-1I-8oo" id="bDs-7u-9r3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J44-aS-fNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,8 +221,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFk-SM-fbg">
                                 <rect key="frame" x="50" y="738" width="314" height="76"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-Br-kN3">
-                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-Br-kN3">
+                                        <rect key="frame" x="18.5" y="15" width="277" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-kP-y0n" userLabel="Socials Button">
                                                 <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
@@ -257,6 +271,13 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dVc-Br-kN3" secondAttribute="trailing" constant="18.5" id="120-2q-VrZ"/>
+                                    <constraint firstItem="dVc-Br-kN3" firstAttribute="leading" secondItem="GFk-SM-fbg" secondAttribute="leading" constant="18.5" id="8HK-cW-MuI"/>
+                                    <constraint firstItem="dVc-Br-kN3" firstAttribute="centerX" secondItem="GFk-SM-fbg" secondAttribute="centerX" id="Gmq-52-hEz"/>
+                                    <constraint firstItem="dVc-Br-kN3" firstAttribute="top" secondItem="GFk-SM-fbg" secondAttribute="top" constant="15" id="ix4-KA-8qw"/>
+                                    <constraint firstAttribute="bottom" secondItem="dVc-Br-kN3" secondAttribute="bottom" constant="16" id="rzA-f4-w3l"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
@@ -279,6 +300,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pgw-gf-6dd"/>
                     </view>
+                    <connections>
+                        <outlet property="closetButton" destination="zsL-D1-g2n" id="vqK-0X-FP9"/>
+                        <outlet property="likesButton" destination="Vwd-rk-UOv" id="uv4-4I-23n"/>
+                        <outlet property="mainButton" destination="gfe-FL-CPD" id="vse-vg-h5A"/>
+                        <outlet property="socialsButton" destination="KmE-kP-y0n" id="ad2-IU-m6C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80g-yb-x7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,8 +322,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-gq-WBu">
                                 <rect key="frame" x="50" y="738" width="314" height="76"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-7r-b4A">
-                                        <rect key="frame" x="19" y="16" width="277" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-7r-b4A">
+                                        <rect key="frame" x="18.5" y="15" width="277" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-Fq-skk" userLabel="Socials Button">
                                                 <rect key="frame" x="0.0" y="2.5" width="53" height="40"/>
@@ -347,6 +374,13 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="p2R-7r-b4A" secondAttribute="bottom" constant="16" id="10L-TS-Qv7"/>
+                                    <constraint firstItem="p2R-7r-b4A" firstAttribute="centerX" secondItem="HHk-gq-WBu" secondAttribute="centerX" id="IR6-Ro-oUj"/>
+                                    <constraint firstItem="p2R-7r-b4A" firstAttribute="leading" secondItem="HHk-gq-WBu" secondAttribute="leading" constant="18.5" id="WyM-jt-jlP"/>
+                                    <constraint firstItem="p2R-7r-b4A" firstAttribute="top" secondItem="HHk-gq-WBu" secondAttribute="top" constant="15" id="eoY-14-UsM"/>
+                                    <constraint firstAttribute="trailing" secondItem="p2R-7r-b4A" secondAttribute="trailing" constant="18.5" id="s9h-7w-nBl"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
@@ -369,6 +403,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cg4-vI-C2V"/>
                     </view>
+                    <connections>
+                        <outlet property="closetButton" destination="qnE-A0-bBS" id="gXp-CD-611"/>
+                        <outlet property="likesButton" destination="7Ck-WG-A0U" id="AOH-OZ-iHe"/>
+                        <outlet property="mainButton" destination="aJR-Z8-2gv" id="cpi-e7-H8t"/>
+                        <outlet property="socialsButton" destination="kfb-Fq-skk" id="dEo-Qs-eEx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1la-93-c5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
