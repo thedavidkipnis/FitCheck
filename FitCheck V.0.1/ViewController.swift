@@ -83,6 +83,30 @@ class ViewController: UIViewController {
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         
         if sender.state == UIGestureRecognizer.State.ended {
+            
+            if card.center.x < 75 {
+            //move card off screen to the left
+                UIView.animate(withDuration: 0.6, animations: {
+                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
+                    card.alpha = 0
+                })
+                UIView.animate(withDuration: 0.6, animations: {
+                    card.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+                })
+                return
+            } else if card.center.x > (view.frame.width - 75) {
+            //move card off screen to the right
+                UIView.animate(withDuration: 0.6, animations: {
+                    card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
+                    card.alpha = 0
+                })
+                UIView.animate(withDuration: 0.6, animations: {
+                    card.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+                })
+                return
+            }
+            
+            
             UIView.animate(withDuration: 0.2, animations: {
                 card.center = self.view.center
                 self.likeIcon.alpha = 0
