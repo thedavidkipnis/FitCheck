@@ -74,8 +74,10 @@ class ViewController: UIViewController {
         
         if xFromCenter > 0 {
             likeIcon.alpha = xFromCenter / 100
+            dislikeIcon.alpha = 0
         } else {
             dislikeIcon.alpha = xFromCenter / -100
+            likeIcon.alpha = 0
         }
         
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
