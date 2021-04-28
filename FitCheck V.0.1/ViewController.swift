@@ -65,14 +65,26 @@ class ViewController: UIViewController {
         })}
     //card Swiping
     @IBOutlet weak var Card: UIView!
+    @IBOutlet weak var likeIcon: UIImageView!
+    @IBOutlet weak var dislikeIcon: UIImageView!
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
         let card = sender.view!
         let point = sender.translation(in: view)
+        let xFromCenter = card.center.x - view.center.x
+        
+        if xFromCenter > 0 {
+            likeIcon.alpha = xFromCenter / 100
+        } else {
+            dislikeIcon.alpha = xFromCenter / -100
+        }
+        
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         
         if sender.state == UIGestureRecognizer.State.ended {
             UIView.animate(withDuration: 0.2, animations: {
                 card.center = self.view.center
+                self.likeIcon.alpha = 0
+                self.dislikeIcon.alpha = 0
             })
         }
     }
@@ -84,6 +96,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         animateButton(sender: mainButton)
         mainButton.tintColor = UIColor.systemYellow
     }
