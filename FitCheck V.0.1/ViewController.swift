@@ -63,6 +63,19 @@ class ViewController: UIViewController {
         self.present(nextViewController, animated: true, completion: {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })}
+    //card Swiping
+    @IBOutlet weak var Card: UIView!
+    @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
+        let card = sender.view!
+        let point = sender.translation(in: view)
+        card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+        
+        if sender.state == UIGestureRecognizer.State.ended {
+            UIView.animate(withDuration: 0.2, animations: {
+                card.center = self.view.center
+            })
+        }
+    }
     
     @IBOutlet weak var socialsButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
