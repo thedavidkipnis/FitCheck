@@ -122,6 +122,9 @@ class ViewController: UIViewController {
                 self.dislikeIcon.alpha = 0
             })
             } else {
+                if imageCount > imageStrings.count - 1 {
+                    imageCount = 0
+                }
                 likeIcon.alpha = 0
                 dislikeIcon.alpha = 0
                 card.center = CGPoint(x: self.view.center.x, y: ogy)
