@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2S-Nn-EAe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2S-Nn-EAe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +15,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-0N-UEp">
-                                <rect key="frame" x="50" y="738" width="314" height="76"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-4d-FVD" userLabel="Ya" customClass="UIImageView">
+                                <rect key="frame" x="50" y="148" width="314" height="540"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-tc-Xah">
+                                        <rect key="frame" x="0.0" y="411" width="145" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.29017396238542892" blue="0.33458626130802871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="suit.heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-jP-q3Q">
+                                        <rect key="frame" x="169" y="411" width="145" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.071216676675910917" green="0.93800825791030751" blue="0.4259204444203652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93131587642649705" green="0.93131587642649705" blue="0.93131587642649705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.9386751056" green="0.93878769870000001" blue="0.93863683939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Sjf-YY-PbU" appends="YES" id="Mgo-bK-XE2"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-0N-UEp">
+                                <rect key="frame" x="50" y="738" width="314" height="76"/>
+                                <color key="backgroundColor" red="1" green="0.92491030799523544" blue="0.52534043969904953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -37,11 +61,11 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf2-d9-V1o"/>
+                                            <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf2-d9-V1o"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-IL-cZb" userLabel="Main Button">
-                                        <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                        <rect key="frame" x="79" y="2.5" width="47" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Uq2-Rb-1dX"/>
                                             <constraint firstAttribute="width" constant="47" id="jzI-d4-AqC"/>
@@ -74,50 +98,28 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-4d-FVD" userLabel="Ya">
-                                <rect key="frame" x="87" y="368" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="suit.heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-jP-q3Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-tc-Xah">
-                                        <rect key="frame" x="0.0" y="-1" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" systemColor="systemPinkColor"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                <color key="tintColor" systemColor="systemPurpleColor"/>
-                                <gestureRecognizers/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Sjf-YY-PbU" appends="YES" id="Mgo-bK-XE2"/>
-                                </connections>
-                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bt4-0u-IvR" secondAttribute="bottom" constant="64" id="12k-AU-8Bt"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="1T6-jO-7P5"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68.5" id="3cj-jn-NPu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bt4-0u-IvR" secondAttribute="trailing" constant="68.5" id="6yg-pZ-1LS"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="8Uy-HO-VTw"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="753" id="FEv-Kh-eZe"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HsR-om-Esc"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IE7-2B-CFd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
+                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="zWT-4d-FVD" secondAttribute="bottom" constant="50" id="fNC-8O-R5H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="i8e-hi-uQb"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mTt-ee-Pbs"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="738" id="ns6-R4-QGv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWT-4d-FVD" secondAttribute="trailing" constant="50" id="waF-xb-xvh"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zt6-Sj-9Oe"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="yFj-eu-sFH"/>
                     <connections>
@@ -127,6 +129,7 @@
                         <outlet property="likeIcon" destination="Ukk-jP-q3Q" id="B3B-TH-v4x"/>
                         <outlet property="likesButton" destination="f1G-T8-p6f" id="axk-aW-L3N"/>
                         <outlet property="mainButton" destination="aEP-IL-cZb" id="5Ji-WX-lHG"/>
+                        <outlet property="navBar" destination="EKk-0N-UEp" id="ZlY-8h-84d"/>
                         <outlet property="socialsButton" destination="ctt-eg-bWT" id="NgY-lW-nLj"/>
                     </connections>
                 </viewController>
@@ -162,11 +165,11 @@
                                                 <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="SocialClick:" destination="fF0-z3-rIF" eventType="touchUpInside" id="keh-zN-OCf"/>
-                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc0-X8-HqB"/>
+                                                    <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc0-X8-HqB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgS-wo-XJS" userLabel="Main Button">
-                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <rect key="frame" x="79" y="2.5" width="47" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="47" id="9bw-lI-g3n"/>
                                                     <constraint firstAttribute="height" constant="40" id="Hb0-9V-LOC"/>
@@ -196,10 +199,10 @@
                                                 <state key="normal" backgroundImage="heart.fill" catalog="system"/>
                                             </button>
                                         </subviews>
-                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="1" green="0.93065011500000006" blue="0.49747794870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FUO-xn-l1M" firstAttribute="top" secondItem="OAX-bC-JjC" secondAttribute="top" constant="15" id="1FS-5g-K3i"/>
                                     <constraint firstItem="FUO-xn-l1M" firstAttribute="leading" secondItem="OAX-bC-JjC" secondAttribute="leading" constant="18.5" id="69Q-Zd-4QD"/>
@@ -209,7 +212,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <integer key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -220,8 +223,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gz6-hu-iQW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gz6-hu-iQW" firstAttribute="trailing" secondItem="OAX-bC-JjC" secondAttribute="trailing" constant="50" id="1dN-A4-xt7"/>
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="centerX" secondItem="4Eg-qh-kcI" secondAttribute="centerX" id="2TO-w7-LcP"/>
@@ -229,6 +231,7 @@
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="top" secondItem="gz6-hu-iQW" secondAttribute="top" constant="694" id="gUb-71-7KP"/>
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="leading" secondItem="gz6-hu-iQW" secondAttribute="leading" constant="50" id="mnM-45-Peh"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="gz6-hu-iQW"/>
                     </view>
                     <connections>
                         <outlet property="closetButton" destination="dXf-nL-fwm" id="0s3-8Y-DNg"/>
@@ -263,12 +266,12 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                                 <connections>
+                                                    <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vu7-FK-uy1"/>
                                                     <action selector="SocialClick:" destination="Fv8-Z9-koX" eventType="touchUpInside" id="dfM-bB-MVQ"/>
-                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vu7-FK-uy1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-FL-CPD" userLabel="Main Button">
-                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <rect key="frame" x="79" y="2.5" width="47" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="47" id="hbN-dv-HPY"/>
                                                     <constraint firstAttribute="height" constant="40" id="tMy-7r-ONw"/>
@@ -298,10 +301,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="1" green="0.9348652959" blue="0.46638947730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dVc-Br-kN3" secondAttribute="trailing" constant="18.5" id="120-2q-VrZ"/>
                                     <constraint firstItem="dVc-Br-kN3" firstAttribute="leading" secondItem="GFk-SM-fbg" secondAttribute="leading" constant="18.5" id="8HK-cW-MuI"/>
@@ -311,7 +314,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <integer key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -322,14 +325,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Pgw-gf-6dd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="50" id="Ati-2r-yU6"/>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" constant="694" id="BSE-u0-dEq"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="bottom" secondItem="GFk-SM-fbg" secondAttribute="bottom" constant="48" id="dBn-Lj-7ye"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="GFk-SM-fbg" secondAttribute="trailing" constant="50" id="qO6-Zn-XEW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pgw-gf-6dd"/>
                     </view>
                     <connections>
                         <outlet property="closetButton" destination="zsL-D1-g2n" id="vqK-0X-FP9"/>
@@ -364,11 +367,11 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="person.2.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRx-V1-lo7"/>
+                                                    <action selector="SocialClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRx-V1-lo7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJR-Z8-2gv" userLabel="Main Button">
-                                                <rect key="frame" x="79" y="3" width="47" height="39.5"/>
+                                                <rect key="frame" x="79" y="2.5" width="47" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="47" id="AAo-n2-HWc"/>
                                                     <constraint firstAttribute="height" constant="40" id="EyB-7e-AUk"/>
@@ -401,10 +404,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="1" green="0.93909162280000003" blue="0.43030998110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="p2R-7r-b4A" secondAttribute="bottom" constant="16" id="10L-TS-Qv7"/>
                                     <constraint firstItem="p2R-7r-b4A" firstAttribute="centerX" secondItem="HHk-gq-WBu" secondAttribute="centerX" id="IR6-Ro-oUj"/>
@@ -414,7 +417,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <integer key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -425,14 +428,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="cg4-vI-C2V"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HHk-gq-WBu" firstAttribute="leading" secondItem="cg4-vI-C2V" secondAttribute="leading" constant="50" id="AT3-1R-AsB"/>
                             <constraint firstItem="cg4-vI-C2V" firstAttribute="bottom" secondItem="HHk-gq-WBu" secondAttribute="bottom" constant="48" id="bxt-Cv-F2R"/>
                             <constraint firstItem="HHk-gq-WBu" firstAttribute="top" secondItem="cg4-vI-C2V" secondAttribute="top" constant="694" id="tcP-d4-MTU"/>
                             <constraint firstItem="cg4-vI-C2V" firstAttribute="trailing" secondItem="HHk-gq-WBu" secondAttribute="trailing" constant="50" id="uGm-3j-pnL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cg4-vI-C2V"/>
                     </view>
                     <connections>
                         <outlet property="closetButton" destination="qnE-A0-bBS" id="gXp-CD-611"/>
@@ -465,26 +468,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bag.fill" catalog="system" width="128" height="128"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
-        <image name="square.fill.on.square.fill" catalog="system" width="128" height="113"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="bag.fill" catalog="system" width="64" height="64"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="square.fill.on.square.fill" catalog="system" width="64" height="56"/>
+        <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
+        <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
 </document>
