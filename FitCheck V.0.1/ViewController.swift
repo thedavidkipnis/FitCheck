@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var isOn: Bool = false
-    
+    var imageStrings = [String]()
+    var imageCount = 1
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
 
@@ -73,8 +74,10 @@ class ViewController: UIViewController {
     
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
+        var leftRotate = false
         var regenFlag = false
         let card = sender.view!
+        let ogy = card.center.y
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
             
@@ -92,38 +95,51 @@ class ViewController: UIViewController {
         if sender.state == UIGestureRecognizer.State.ended {
             if card.center.x < 75 {
             //move card off screen to the left
+                leftRotate = true
                 UIView.animate(withDuration: 0.2, animations: {
                     card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
                     card.transform = card.transform.rotated(by: -.pi/10)
                     card.alpha = 0
                 })
+                imageCount = imageCount + 1
                 regenFlag = true
             } else if card.center.x > (view.frame.width - 75) {
             //move card off screen to the right
+                leftRotate = false
                 UIView.animate(withDuration: 0.2, animations: {
                     card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
                     card.transform = card.transform.rotated(by: .pi/10)
                     card.alpha = 0
                 })
+                imageCount = imageCount + 1
                 regenFlag = true
             }
             
             if regenFlag == false {
             UIView.animate(withDuration: 0.2, animations: {
-                card.center = CGPoint(x: self.navBar.center.x, y: self.view.center.y - 50)
+                card.center = CGPoint(x: self.view.center.x, y: ogy)
                 self.likeIcon.alpha = 0
                 self.dislikeIcon.alpha = 0
             })
             } else {
-//                card.alpha = 0
-//                UIView.animate(withDuration: 0, animations: {
-//                    card.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
-//                })
-//                UIView.animate(withDuration: 1.0, animations: {
-//                    card.alpha = 1
-//                })
-//                self.likeIcon.alpha = 0
-//                self.dislikeIcon.alpha = 0
+                likeIcon.alpha = 0
+                dislikeIcon.alpha = 0
+                card.center = CGPoint(x: self.view.center.x, y: ogy)
+                if leftRotate == true {
+                    card.transform = card.transform.rotated(by: .pi/10)
+                } else {
+                    card.transform = card.transform.rotated(by: -.pi/10)
+                }
+                card.alpha = 1
+                let image = UIImage(named: imageStrings[imageCount - 1])
+                let imageView = UIImageView(image: image!)
+                imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
+                imageView.contentMode = .scaleAspectFill
+                imageView.layer.cornerRadius = 20
+                imageView.layer.masksToBounds = true
+                self.Card.addSubview(imageView)
+                Card.bringSubviewToFront(likeIcon)
+                Card.bringSubviewToFront(dislikeIcon)
             }
         }
     }
@@ -139,8 +155,29 @@ class ViewController: UIViewController {
         animateButton(sender: mainButton)
         mainButton.tintColor = UIColor.systemYellow
         
+        // Get each image in images folder and create array of images
+        imageStrings.removeAll()
+        let fileManager = FileManager.default
+        let bundleURL = Bundle.main.bundleURL
+        let assetURL = bundleURL.appendingPathComponent("images.bundle")
+
+        do {
+          let contents = try fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+
+          for item in contents
+          {
+            let filename = item.lastPathComponent
+            let splitString = filename.components(separatedBy: ".")
+            let file: String = splitString[0]
+            imageStrings.append(file)
+          }
+        }
+        catch let error as NSError {
+          print(error)
+        }
+        
         //generating and adding image to first card
-        let image = UIImage(named: "test_image")
+        let image = UIImage(named: imageStrings[0])
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
         imageView.contentMode = .scaleAspectFill
@@ -149,6 +186,7 @@ class ViewController: UIViewController {
         self.Card.addSubview(imageView)
         Card.bringSubviewToFront(likeIcon)
         Card.bringSubviewToFront(dislikeIcon)
+        
     }
 }
 
