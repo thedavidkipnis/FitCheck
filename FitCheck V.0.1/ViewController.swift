@@ -66,11 +66,15 @@ class ViewController: UIViewController {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })}
     
+    //outlet for text field on card
+    @IBOutlet weak var imageLabel: UITextField!
     //outlets for the card and the two like icons on the card for swiping
     @IBOutlet weak var Card: UIImageView!
     @IBOutlet weak var likeIcon: UIImageView!
     @IBOutlet weak var dislikeIcon: UIImageView!
     @IBOutlet weak var navBar: UIView!
+    
+    
     
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
@@ -123,7 +127,7 @@ class ViewController: UIViewController {
             })
             } else {
                 if imageCount > imageStrings.count - 1 {
-                    imageCount = 0
+                    imageCount = 1
                 }
                 likeIcon.alpha = 0
                 dislikeIcon.alpha = 0
@@ -135,6 +139,9 @@ class ViewController: UIViewController {
                 }
                 card.alpha = 1
                 let image = UIImage(named: imageStrings[imageCount - 1])
+                //set label for card to be the product name
+                //imageLabel.insertText(imageStrings[imageCount - 1])
+                //imageLabel.textColor = UIColor.systemGray6
                 let imageView = UIImageView(image: image!)
                 imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
                 imageView.contentMode = .scaleAspectFill
