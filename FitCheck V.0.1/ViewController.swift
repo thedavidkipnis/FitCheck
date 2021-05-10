@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var isOn: Bool = false
-    var imageStrings = [String]()
+    var cards: [Card] = []
+    var labelStrings = [String]()
     var imageCount = 1
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
@@ -66,9 +67,9 @@ class ViewController: UIViewController {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })}
     
-    //outlet for text field on card
-    @IBOutlet weak var imageLabel: UITextField!
     //outlets for the card and the two like icons on the card for swiping
+    
+    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var Card: UIImageView!
     @IBOutlet weak var likeIcon: UIImageView!
     @IBOutlet weak var dislikeIcon: UIImageView!
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
         var leftRotate = false
         var regenFlag = false
         let card = sender.view!
-        let ogy = card.center.y
+        let ogy = self.view.center.y - 50
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
             
@@ -126,9 +127,10 @@ class ViewController: UIViewController {
                 self.dislikeIcon.alpha = 0
             })
             } else {
-                if imageCount > imageStrings.count - 1 {
+                if imageCount > cards.count - 1 {
                     imageCount = 1
                 }
+                let cardIcon = cards[imageCount - 1]
                 likeIcon.alpha = 0
                 dislikeIcon.alpha = 0
                 card.center = CGPoint(x: self.view.center.x, y: ogy)
@@ -138,21 +140,25 @@ class ViewController: UIViewController {
                     card.transform = card.transform.rotated(by: -.pi/10)
                 }
                 card.alpha = 1
-                let image = UIImage(named: imageStrings[imageCount - 1])
+                let image = UIImage(named: cardIcon.fileName)
                 //set label for card to be the product name
-                //imageLabel.insertText(imageStrings[imageCount - 1])
-                //imageLabel.textColor = UIColor.systemGray6
+                print("Printing label name...")
+                print(cardIcon.labelName)
                 let imageView = UIImageView(image: image!)
                 imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
                 imageView.contentMode = .scaleAspectFill
                 imageView.layer.cornerRadius = 20
                 imageView.layer.masksToBounds = true
-                self.Card.addSubview(imageView)
+                Card.addSubview(imageView)
+                imageLabel.sizeToFit()
+                imageLabel.text = (cardIcon.labelName)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
+                Card.bringSubviewToFront(imageLabel)
             }
         }
     }
+    
     
     @IBOutlet weak var socialsButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
@@ -166,36 +172,43 @@ class ViewController: UIViewController {
         mainButton.tintColor = UIColor.systemYellow
         
         // Get each image in images folder and create array of images
-        imageStrings.removeAll()
+        labelStrings = ["H&M Purple Tie Crop Top", "LuluLemon Reflective Trenchcoat", "Lululemon All Sport Bra III","Womens Yellow Old Skool vans","American Eagle Lightwash Jeans", "LuluLemon Wunder Under High-Rise", "American Eagle Brown Knit Sweater","Lulus White Lace Dress", "American Eagle Tri-Color Knit Sweater",
+        "H&M ACDC Crop Top", "Womens Dr. Martens boot"]
         let fileManager = FileManager.default
         let bundleURL = Bundle.main.bundleURL
         let assetURL = bundleURL.appendingPathComponent("images.bundle")
 
         do {
           let contents = try fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
-
-          for item in contents
+            print("Length of contents")
+            print(contents.count)
+            for i in 0 ... contents.count - 1
           {
-            let filename = item.lastPathComponent
+            print(contents[i])
+            let filename = contents[i].lastPathComponent
             let splitString = filename.components(separatedBy: ".")
             let file: String = splitString[0]
-            imageStrings.append(file)
+                cards.append(FitCheck_V_0_1.Card(fileName: file, labelName: labelStrings[i]))
           }
         }
         catch let error as NSError {
           print(error)
         }
-        
         //generating and adding image to first card
-        let image = UIImage(named: imageStrings[0])
+        var firstcard : Card
+        firstcard = cards[0]
+        let image = UIImage(named: firstcard.fileName)
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
-        self.Card.addSubview(imageView)
+        Card.addSubview(imageView)
+        imageLabel.sizeToFit()
+        imageLabel.text = (firstcard.labelName)
         Card.bringSubviewToFront(likeIcon)
         Card.bringSubviewToFront(dislikeIcon)
+        Card.bringSubviewToFront(imageLabel)
         
     }
 }

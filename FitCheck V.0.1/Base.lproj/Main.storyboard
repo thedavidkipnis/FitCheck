@@ -17,38 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-4d-FVD" userLabel="Ya" customClass="UIImageView">
-                                <rect key="frame" x="50" y="148" width="314" height="540"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-tc-Xah">
-                                        <rect key="frame" x="0.0" y="411" width="145" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="1" green="0.29017396238542892" blue="0.33458626130802871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="suit.heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-jP-q3Q">
-                                        <rect key="frame" x="169" y="411" width="145" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.071216676675910917" green="0.93800825791030751" blue="0.4259204444203652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dF-rr-Xwo">
-                                        <rect key="frame" x="96" y="485" width="97" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.93131587642649705" green="0.93131587642649705" blue="0.93131587642649705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.9386751056" green="0.93878769870000001" blue="0.93863683939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Sjf-YY-PbU" appends="YES" id="Mgo-bK-XE2"/>
-                                </connections>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-0N-UEp">
                                 <rect key="frame" x="50" y="738" width="314" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.92491030799523544" blue="0.52534043969904953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,6 +76,38 @@
                                 </subviews>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                             </stackView>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-4d-FVD" userLabel="Ya" customClass="UIImageView">
+                                <rect key="frame" x="50" y="148" width="314" height="540"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-tc-Xah">
+                                        <rect key="frame" x="0.0" y="411" width="145" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.29017396238542892" blue="0.33458626130802871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="suit.heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-jP-q3Q">
+                                        <rect key="frame" x="169" y="411" width="145" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.071216676675910917" green="0.93800825791030751" blue="0.4259204444203652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93131587642649705" green="0.93131587642649705" blue="0.93131587642649705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.9386751056" green="0.93878769870000001" blue="0.93863683939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Sjf-YY-PbU" appends="YES" id="Mgo-bK-XE2"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vha-l2-EpV">
+                                <rect key="frame" x="186" y="652" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,11 +121,13 @@
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HsR-om-Esc"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IE7-2B-CFd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
+                            <constraint firstItem="vha-l2-EpV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="Okn-CW-bBn"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="zWT-4d-FVD" secondAttribute="bottom" constant="50" id="fNC-8O-R5H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="i8e-hi-uQb"/>
                             <constraint firstItem="zWT-4d-FVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mTt-ee-Pbs"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="738" id="ns6-R4-QGv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWT-4d-FVD" secondAttribute="trailing" constant="50" id="waF-xb-xvh"/>
+                            <constraint firstItem="vha-l2-EpV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="564" id="yEH-Am-PQt"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zt6-Sj-9Oe"/>
                         </constraints>
                     </view>
@@ -134,7 +136,7 @@
                         <outlet property="Card" destination="zWT-4d-FVD" id="JcT-xh-7mq"/>
                         <outlet property="closetButton" destination="A9b-0O-CDx" id="r97-sI-eda"/>
                         <outlet property="dislikeIcon" destination="mjJ-tc-Xah" id="cHN-vX-gNg"/>
-                        <outlet property="imageLabel" destination="2dF-rr-Xwo" id="UvO-Nm-MDA"/>
+                        <outlet property="imageLabel" destination="vha-l2-EpV" id="68L-US-QQz"/>
                         <outlet property="likeIcon" destination="Ukk-jP-q3Q" id="B3B-TH-v4x"/>
                         <outlet property="likesButton" destination="f1G-T8-p6f" id="axk-aW-L3N"/>
                         <outlet property="mainButton" destination="aEP-IL-cZb" id="5Ji-WX-lHG"/>
