@@ -150,7 +150,8 @@ class ViewController: UIViewController {
                 imageView.layer.cornerRadius = 20
                 imageView.layer.masksToBounds = true
                 Card.addSubview(imageView)
-                imageLabel.sizeToFit()
+                imageLabel.numberOfLines = 0
+               // imageLabel.sizeToFit()
                 imageLabel.text = (cardIcon.labelName)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
@@ -166,6 +167,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var likesButton: UIButton!
     
     override func viewDidLoad() {
+        imageLabel.adjustsFontSizeToFitWidth = true
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         animateButton(sender: mainButton)
@@ -204,7 +206,8 @@ class ViewController: UIViewController {
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         Card.addSubview(imageView)
-        imageLabel.sizeToFit()
+        imageLabel.numberOfLines = 0
+        //imageLabel.sizeToFit()
         imageLabel.text = (firstcard.labelName)
         Card.bringSubviewToFront(likeIcon)
         Card.bringSubviewToFront(dislikeIcon)
