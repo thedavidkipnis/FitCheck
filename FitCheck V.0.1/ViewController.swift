@@ -75,8 +75,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var dislikeIcon: UIImageView!
     @IBOutlet weak var navBar: UIView!
     
-    
-    
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
         var leftRotate = false
@@ -142,8 +140,8 @@ class ViewController: UIViewController {
                 card.alpha = 1
                 let image = UIImage(named: cardIcon.fileName)
                 //set label for card to be the product name
-                print("Printing label name...")
-                print(cardIcon.labelName)
+//                print("Printing label name...")
+//                print(cardIcon.labelName)
                 let imageView = UIImageView(image: image!)
                 imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
                 imageView.contentMode = .scaleAspectFill
