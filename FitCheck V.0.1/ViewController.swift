@@ -140,16 +140,9 @@ class ViewController: UIViewController {
                 card.alpha = 1
                 let image = UIImage(named: cardIcon.fileName)
                 //set label for card to be the product name
-//                print("Printing label name...")
-//                print(cardIcon.labelName)
-                let imageView = UIImageView(image: image!)
-                imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
-                imageView.contentMode = .scaleAspectFill
-                imageView.layer.cornerRadius = 20
-                imageView.layer.masksToBounds = true
-                Card.addSubview(imageView)
+                Card.image = image
+                Card.contentMode = .scaleAspectFit
                 imageLabel.numberOfLines = 0
-               // imageLabel.sizeToFit()
                 imageLabel.text = (cardIcon.labelName)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
@@ -198,14 +191,9 @@ class ViewController: UIViewController {
         var firstcard : Card
         firstcard = cards[0]
         let image = UIImage(named: firstcard.fileName)
-        let imageView = UIImageView(image: image!)
-        imageView.frame = CGRect(x: 0, y: 0, width: 314, height: 540)
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
-        Card.addSubview(imageView)
+        Card.image = image
+        Card.contentMode = .scaleAspectFit
         imageLabel.numberOfLines = 0
-        //imageLabel.sizeToFit()
         imageLabel.text = (firstcard.labelName)
         Card.bringSubviewToFront(likeIcon)
         Card.bringSubviewToFront(dislikeIcon)
