@@ -138,11 +138,13 @@ class ViewController: UIViewController {
                     card.transform = card.transform.rotated(by: -.pi/10)
                 }
                 card.alpha = 1
+                
+                //setting new card image
                 let image = UIImage(named: cardIcon.fileName)
-                //set label for card to be the product name
                 Card.image = image
-                Card.contentMode = .scaleAspectFit
-                imageLabel.numberOfLines = 0
+                //Card.contentMode = .scaleAspectFill
+                //Card.layer.masksToBounds = true
+                //set label for card to be the product name
                 imageLabel.text = (cardIcon.labelName)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
@@ -192,13 +194,20 @@ class ViewController: UIViewController {
         firstcard = cards[0]
         let image = UIImage(named: firstcard.fileName)
         Card.image = image
-        Card.contentMode = .scaleAspectFit
-        imageLabel.numberOfLines = 0
+        Card.contentMode = .scaleAspectFill
+        Card.layer.masksToBounds = true
+        Card.layer.borderWidth = 1
+        Card.layer.borderColor = UIColor.lightGray.cgColor
         imageLabel.text = (firstcard.labelName)
+        imageLabel.backgroundColor = UIColor.white
+        imageLabel.layer.masksToBounds = true
+        imageLabel.layer.borderWidth = 1
+        imageLabel.layer.borderColor = UIColor.lightGray.cgColor
+        imageLabel.layer.cornerRadius = 40
+        imageLabel.textAlignment = .center
+        Card.bringSubviewToFront(imageLabel)
         Card.bringSubviewToFront(likeIcon)
         Card.bringSubviewToFront(dislikeIcon)
-        Card.bringSubviewToFront(imageLabel)
-        
     }
 }
 
