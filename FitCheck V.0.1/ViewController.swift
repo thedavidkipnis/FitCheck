@@ -146,9 +146,9 @@ class ViewController: UIViewController {
                 //Card.layer.masksToBounds = true
                 //set label for card to be the product name
                 imageLabel.text = (cardIcon.labelName)
+                Card.bringSubviewToFront(imageLabel)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
-                Card.bringSubviewToFront(imageLabel)
             }
         }
     }
