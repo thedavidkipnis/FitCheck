@@ -144,8 +144,11 @@ class ViewController: UIViewController {
                 Card.image = image
                 //Card.contentMode = .scaleAspectFill
                 //Card.layer.masksToBounds = true
+                
                 //set label for card to be the product name
                 imageLabel.text = (cardIcon.labelName)
+                
+                //rearranging the label and like/dislike buttons
                 Card.bringSubviewToFront(imageLabel)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
