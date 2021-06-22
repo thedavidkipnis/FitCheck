@@ -12,6 +12,7 @@
 		879C012226269CC600795B75 /* SocialsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879C012126269CC600795B75 /* SocialsPage.swift */; };
 		87B40CE5263B5ED70035D639 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 87B40CE4263B5ED70035D639 /* images.bundle */; };
 		87B40CEC264852A50035D639 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B40CEB264852A50035D639 /* Card.swift */; };
+		D56784CF26828FCF006B4097 /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56784CE26828FCF006B4097 /* LastCard.swift */; };
 		D5D3BD68261ECFAF0067799D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D3BD67261ECFAF0067799D /* AppDelegate.swift */; };
 		D5D3BD6A261ECFAF0067799D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D3BD69261ECFAF0067799D /* SceneDelegate.swift */; };
 		D5D3BD6C261ECFAF0067799D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D3BD6B261ECFAF0067799D /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		879C012126269CC600795B75 /* SocialsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsPage.swift; sourceTree = "<group>"; };
 		87B40CE4263B5ED70035D639 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = images.bundle; path = ../../../Desktop/images.bundle; sourceTree = "<group>"; };
 		87B40CEB264852A50035D639 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D56784CE26828FCF006B4097 /* LastCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCard.swift; sourceTree = "<group>"; };
 		D5D3BD64261ECFAF0067799D /* FitCheck V.0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitCheck V.0.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D3BD67261ECFAF0067799D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5D3BD69261ECFAF0067799D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				D5D3BD69261ECFAF0067799D /* SceneDelegate.swift */,
 				D5D3BD6B261ECFAF0067799D /* ViewController.swift */,
 				87B40CEB264852A50035D639 /* Card.swift */,
+				D56784CE26828FCF006B4097 /* LastCard.swift */,
 				879C0119261FF48000795B75 /* LikesPage.swift */,
 				879C011E26269C1400795B75 /* Closet.swift */,
 				D5D3BD6D261ECFAF0067799D /* Main.storyboard */,
@@ -161,6 +164,7 @@
 				879C012226269CC600795B75 /* SocialsPage.swift in Sources */,
 				D5D3BD68261ECFAF0067799D /* AppDelegate.swift in Sources */,
 				D5D3BD6A261ECFAF0067799D /* SceneDelegate.swift in Sources */,
+				D56784CF26828FCF006B4097 /* LastCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

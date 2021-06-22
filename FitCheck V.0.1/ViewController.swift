@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     var cards: [Card] = []
     var labelStrings = [String]()
     var imageCount = 1
+    var lastCard: LastCard = LastCard.sharedInstance
+    public var lastCardCount = 0
+
+    
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
 
@@ -96,8 +100,8 @@ class ViewController: UIViewController {
         
         //when user stops holding the card, check if it passed boundaries
         if sender.state == UIGestureRecognizer.State.ended {
-            if card.center.x < 75 {
             //move card off screen to the left
+            if card.center.x < 75 {
                 leftRotate = true
                 UIView.animate(withDuration: 0.2, animations: {
                     card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
@@ -106,8 +110,9 @@ class ViewController: UIViewController {
                 })
                 imageCount = imageCount + 1
                 regenFlag = true
-            } else if card.center.x > (view.frame.width - 75) {
+            }
             //move card off screen to the right
+            else if card.center.x > (view.frame.width - 75) {
                 leftRotate = false
                 UIView.animate(withDuration: 0.2, animations: {
                     card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
@@ -118,6 +123,7 @@ class ViewController: UIViewController {
                 regenFlag = true
             }
             
+            //checking if we need to generate a new card
             if regenFlag == false {
             UIView.animate(withDuration: 0.2, animations: {
                 card.center = CGPoint(x: self.view.center.x, y: ogy)
@@ -152,10 +158,10 @@ class ViewController: UIViewController {
                 Card.bringSubviewToFront(imageLabel)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
+                lastCard.lastCardCount = imageCount - 1
             }
         }
     }
-    
     
     @IBOutlet weak var socialsButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
@@ -163,6 +169,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var likesButton: UIButton!
     
     override func viewDidLoad() {
+        lastCardCount = lastCard.lastCardCount
+        imageCount = lastCardCount + 1
         imageLabel.adjustsFontSizeToFitWidth = true
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -178,11 +186,11 @@ class ViewController: UIViewController {
 
         do {
           let contents = try fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
-            print("Length of contents")
-            print(contents.count)
+            //print("Length of contents")
+            //print(contents.count)
             for i in 0 ... contents.count - 1
           {
-            print(contents[i])
+            //print(contents[i])
             let filename = contents[i].lastPathComponent
             let splitString = filename.components(separatedBy: ".")
             let file: String = splitString[0]
@@ -192,9 +200,10 @@ class ViewController: UIViewController {
         catch let error as NSError {
           print(error)
         }
+        
         //generating and adding image to first card
         var firstcard : Card
-        firstcard = cards[0]
+        firstcard = cards[lastCardCount]
         let image = UIImage(named: firstcard.fileName)
         Card.image = image
         Card.contentMode = .scaleAspectFill
