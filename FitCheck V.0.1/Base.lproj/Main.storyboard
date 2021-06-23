@@ -75,7 +75,7 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </stackView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-4d-FVD" userLabel="Ya" customClass="UIImageView">
-                                <rect key="frame" x="50" y="104" width="314" height="584"/>
+                                <rect key="frame" x="50" y="112" width="314" height="594"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-tc-Xah">
                                         <rect key="frame" x="8" y="409" width="145" height="128"/>
@@ -88,7 +88,7 @@
                                         <color key="tintColor" red="0.071216676675910917" green="0.93800825791030751" blue="0.4259204444203652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vha-l2-EpV">
-                                        <rect key="frame" x="0.0" y="497" width="314" height="87"/>
+                                        <rect key="frame" x="0.0" y="497" width="314" height="97"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="fA9-m8-hZP"/>
                                         </constraints>
@@ -115,23 +115,62 @@
                                     <outletCollection property="gestureRecognizers" destination="Sjf-YY-PbU" appends="YES" id="Mgo-bK-XE2"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNj-Tz-Njg">
+                                <rect key="frame" x="20" y="48" width="38" height="33"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" backgroundImage="slider.horizontal.3" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="FilterClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfH-yV-4I8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wt-mc-joO" userLabel="Logo">
+                                <rect key="frame" x="110" y="44" width="194" height="39"/>
+                                <color key="backgroundColor" red="1" green="0.92877995970000005" blue="0.56687647100000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.92877995970000005" blue="0.56687647100000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="FitCheck">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="28.5" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bt4-0u-IvR" secondAttribute="bottom" constant="64" id="12k-AU-8Bt"/>
-                            <constraint firstItem="zWT-4d-FVD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="1T6-jO-7P5"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="top" secondItem="1wt-mc-joO" secondAttribute="bottom" constant="29" id="1T6-jO-7P5" userLabel="Ya - top"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68.5" id="3cj-jn-NPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1wt-mc-joO" secondAttribute="bottom" constant="779" id="4Az-Zq-L24"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bt4-0u-IvR" secondAttribute="trailing" constant="68.5" id="6yg-pZ-1LS"/>
-                            <constraint firstItem="zWT-4d-FVD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="8Uy-HO-VTw"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="8Uy-HO-VTw" userLabel="Ya - left"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="753" id="FEv-Kh-eZe"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HsR-om-Esc"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IE7-2B-CFd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1wt-mc-joO" secondAttribute="trailing" constant="110" id="JUX-On-aY4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EKk-0N-UEp" secondAttribute="trailing" constant="50" id="NrM-QG-yhT"/>
-                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="zWT-4d-FVD" secondAttribute="bottom" constant="50" id="fNC-8O-R5H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zNj-Tz-Njg" secondAttribute="trailing" constant="356" id="UmP-Gz-HWP"/>
+                            <constraint firstItem="1wt-mc-joO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="WaL-re-Sao"/>
+                            <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="zWT-4d-FVD" secondAttribute="bottom" constant="32" id="fNC-8O-R5H" userLabel="Ya - bottom"/>
+                            <constraint firstItem="zNj-Tz-Njg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2.5" id="fSh-n2-78k"/>
+                            <constraint firstItem="zNj-Tz-Njg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gyf-Ji-elf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EKk-0N-UEp" secondAttribute="bottom" constant="48" id="i8e-hi-uQb"/>
-                            <constraint firstItem="zWT-4d-FVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mTt-ee-Pbs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zNj-Tz-Njg" secondAttribute="bottom" constant="779" id="jmB-NJ-bme"/>
+                            <constraint firstItem="zWT-4d-FVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mTt-ee-Pbs" userLabel="Ya - center"/>
                             <constraint firstItem="EKk-0N-UEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="738" id="ns6-R4-QGv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWT-4d-FVD" secondAttribute="trailing" constant="50" id="waF-xb-xvh"/>
+                            <constraint firstItem="1wt-mc-joO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pFe-2x-EHT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWT-4d-FVD" secondAttribute="trailing" constant="50" id="waF-xb-xvh" userLabel="Ya - right"/>
                             <constraint firstItem="bt4-0u-IvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zt6-Sj-9Oe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -141,9 +180,11 @@
                         <outlet property="Card" destination="zWT-4d-FVD" id="JcT-xh-7mq"/>
                         <outlet property="closetButton" destination="A9b-0O-CDx" id="r97-sI-eda"/>
                         <outlet property="dislikeIcon" destination="mjJ-tc-Xah" id="cHN-vX-gNg"/>
+                        <outlet property="filterButton" destination="zNj-Tz-Njg" id="bZe-lW-ZBA"/>
                         <outlet property="imageLabel" destination="vha-l2-EpV" id="68L-US-QQz"/>
                         <outlet property="likeIcon" destination="Ukk-jP-q3Q" id="B3B-TH-v4x"/>
                         <outlet property="likesButton" destination="f1G-T8-p6f" id="axk-aW-L3N"/>
+                        <outlet property="logoLabel" destination="1wt-mc-joO" id="91u-ms-33c"/>
                         <outlet property="mainButton" destination="aEP-IL-cZb" id="5Ji-WX-lHG"/>
                         <outlet property="navBar" destination="EKk-0N-UEp" id="ZlY-8h-84d"/>
                         <outlet property="socialsButton" destination="ctt-eg-bWT" id="NgY-lW-nLj"/>
@@ -469,6 +510,7 @@
         <image name="bag.fill" catalog="system" width="64" height="64"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
         <image name="square.fill.on.square.fill" catalog="system" width="64" height="56"/>
         <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
         <image name="trash.fill" catalog="system" width="60" height="64"/>

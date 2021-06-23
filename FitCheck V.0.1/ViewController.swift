@@ -71,13 +71,19 @@ class ViewController: UIViewController {
             nextViewController.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         })}
     
-    //outlets for the card and the two like icons on the card for swiping
+    //clicking the filter button
+    @IBAction func FilterClick(_ sender: Any) {
+        
+    }
     
+    
+    //outlets for the card and the two like icons on the card for swiping
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var Card: UIImageView!
     @IBOutlet weak var likeIcon: UIImageView!
     @IBOutlet weak var dislikeIcon: UIImageView!
     @IBOutlet weak var navBar: UIView!
+    @IBOutlet weak var logoLabel: UILabel!
     
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
@@ -89,10 +95,10 @@ class ViewController: UIViewController {
         let xFromCenter = card.center.x - view.center.x
             
         if xFromCenter > 0 {
-            likeIcon.alpha = xFromCenter / 100
+            likeIcon.alpha = xFromCenter / 75
             dislikeIcon.alpha = 0
         } else {
-            dislikeIcon.alpha = xFromCenter / -100
+            dislikeIcon.alpha = xFromCenter / -75
             likeIcon.alpha = 0
         }
         
@@ -167,6 +173,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var closetButton: UIButton!
     @IBOutlet weak var likesButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
     override func viewDidLoad() {
         lastCardCount = lastCard.lastCardCount
@@ -176,6 +183,8 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         animateButton(sender: mainButton)
         mainButton.tintColor = UIColor.systemYellow
+        view.sendSubviewToBack(logoLabel)
+        view.sendSubviewToBack(filterButton)
         
         // Get each image in images folder and create array of images
         labelStrings = ["H&M Purple Tie Crop Top", "LuluLemon Reflective Trenchcoat", "Lululemon All Sport Bra III","Womens Yellow Old Skool vans","American Eagle Lightwash Jeans", "LuluLemon Wunder Under High-Rise", "American Eagle Brown Knit Sweater","Lulus White Lace Dress", "American Eagle Tri-Color Knit Sweater",
