@@ -20,9 +20,7 @@ class ViewController: UIViewController {
     
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
-
         sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-
         UIView.animate(withDuration: 0.5,
                                    delay: 0,
                                    usingSpringWithDamping: CGFloat(0.20),
@@ -76,7 +74,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     //outlets for the card and the two like icons on the card for swiping
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var Card: UIImageView!
@@ -84,6 +81,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var dislikeIcon: UIImageView!
     @IBOutlet weak var navBar: UIView!
     @IBOutlet weak var logoLabel: UILabel!
+    //outlets for buttons
+    @IBOutlet weak var socialsButton: UIButton!
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var closetButton: UIButton!
+    @IBOutlet weak var likesButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
@@ -130,13 +133,16 @@ class ViewController: UIViewController {
             }
             
             //checking if we need to generate a new card
+            //case 1 - no need to regen card
             if regenFlag == false {
             UIView.animate(withDuration: 0.2, animations: {
                 card.center = CGPoint(x: self.view.center.x, y: ogy)
                 self.likeIcon.alpha = 0
                 self.dislikeIcon.alpha = 0
-            })
-            } else {
+                })
+            }
+            //case 2 - need to regen card
+            else {
                 if imageCount > cards.count - 1 {
                     imageCount = 1
                 }
@@ -154,8 +160,6 @@ class ViewController: UIViewController {
                 //setting new card image
                 let image = UIImage(named: cardIcon.fileName)
                 Card.image = image
-                //Card.contentMode = .scaleAspectFill
-                //Card.layer.masksToBounds = true
                 
                 //set label for card to be the product name
                 imageLabel.text = (cardIcon.labelName)
@@ -164,17 +168,14 @@ class ViewController: UIViewController {
                 Card.bringSubviewToFront(imageLabel)
                 Card.bringSubviewToFront(likeIcon)
                 Card.bringSubviewToFront(dislikeIcon)
+                
+                //setting memory for last card count
                 lastCard.lastCardCount = imageCount - 1
             }
         }
     }
     
-    @IBOutlet weak var socialsButton: UIButton!
-    @IBOutlet weak var mainButton: UIButton!
-    @IBOutlet weak var closetButton: UIButton!
-    @IBOutlet weak var likesButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
-    
+    //main start up method for loading app
     override func viewDidLoad() {
         lastCardCount = lastCard.lastCardCount
         imageCount = lastCardCount + 1
