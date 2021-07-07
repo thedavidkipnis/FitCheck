@@ -21,6 +21,7 @@
 		D5D3BD6F261ECFAF0067799D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D3BD6D261ECFAF0067799D /* Main.storyboard */; };
 		D5D3BD71261ECFB00067799D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D3BD70261ECFB00067799D /* Assets.xcassets */; };
 		D5D3BD74261ECFB00067799D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D3BD72261ECFB00067799D /* LaunchScreen.storyboard */; };
+		D5DDD36E2683C79C00A5FA0B /* Logo3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D5DDD36D2683C79B00A5FA0B /* Logo3.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D5D3BD70261ECFB00067799D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D3BD73261ECFB00067799D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5D3BD75261ECFB00067799D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5DDD36D2683C79B00A5FA0B /* Logo3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo3.PNG; path = ../../../Downloads/Logo3.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				87B40CE4263B5ED70035D639 /* images.bundle */,
 				D5D3BD72261ECFB00067799D /* LaunchScreen.storyboard */,
 				D5D3BD75261ECFB00067799D /* Info.plist */,
+				D5DDD36D2683C79B00A5FA0B /* Logo3.PNG */,
 				D56784D52682F0BF006B4097 /* Logo2.PNG */,
 				D56784D42682F0BE006B4097 /* Logo1.PNG */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DDD36E2683C79C00A5FA0B /* Logo3.PNG in Resources */,
 				D56784D72682F0BF006B4097 /* Logo2.PNG in Resources */,
 				D5D3BD74261ECFB00067799D /* LaunchScreen.storyboard in Resources */,
 				D5D3BD71261ECFB00067799D /* Assets.xcassets in Resources */,

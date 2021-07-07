@@ -16,8 +16,11 @@ class ViewController: UIViewController {
     var imageCount = 1
     var lastCard: LastCard = LastCard.sharedInstance
     public var lastCardCount = 0
-
     
+    var filterMenu = UIView()
+    var filterMenuTable = UITableView()
+    var filterMenuHeight: CGFloat = 0
+     
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
         sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
@@ -70,8 +73,49 @@ class ViewController: UIViewController {
         })}
     
     //clicking the filter button
-    @IBAction func FilterClick(_ sender: Any) {
+    @IBAction func FilterClick(_ sender: UIButton) {
+        filterMenuHeight = view.bounds.size.height - 100
+        let window = self.view
+        filterMenu.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        filterMenu.frame = self.view.frame
+        window?.addSubview(filterMenu)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(slideUpViewTapped))
+        filterMenu.addGestureRecognizer(tapGesture)
+        
+        filterMenu.alpha = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0, usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0,
+                       options: .curveEaseInOut, animations: {
+          self.filterMenu.alpha = 0.8
+        }, completion: nil)
+        
+        let screenSize = UIScreen.main.bounds.size
+        filterMenuTable.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: filterMenuHeight)
+        filterMenuTable.separatorStyle = .none
+        window?.addSubview(filterMenuTable)
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0, usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0,
+                       options: .curveEaseInOut, animations: {
+          self.filterMenu.alpha = 0.8
+          self.filterMenuTable.frame = CGRect(x: 0, y: screenSize.height - self.filterMenuHeight, width: screenSize.width, height: self.filterMenuHeight)
+        }, completion: nil)
+    }
+    
+    //function for sliding the filter menu
+    @objc func slideUpViewTapped() {
+        filterMenuHeight = view.bounds.size.height - 100
+        let screenSize = UIScreen.main.bounds.size
+        UIView.animate(withDuration: 0.5,
+                       delay: 0, usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 1.0,
+                       options: .curveEaseInOut, animations: {
+          self.filterMenu.alpha = 0
+            self.filterMenuTable.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.filterMenuHeight)
+          }, completion: nil)
     }
     
     //outlets for the card and the two like icons on the card for swiping

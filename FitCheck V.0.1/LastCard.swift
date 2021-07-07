@@ -10,6 +10,8 @@ import Foundation
 
 class LastCard : NSObject {
     public var lastCardCount = 0
+    
+    //constructor
     static let sharedInstance: LastCard = {
         let instance = LastCard()
         return instance
