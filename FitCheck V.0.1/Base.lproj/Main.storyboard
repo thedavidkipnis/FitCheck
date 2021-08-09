@@ -273,20 +273,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the likes page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a85-sV-Jjd" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="159" y="396" width="159" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hmm... You don't seem to have any liked items yet. Try swiping right on some stuff you like!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-kk-WjO">
+                                <rect key="frame" x="50" y="411" width="314" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gz6-hu-iQW" firstAttribute="trailing" secondItem="OAX-bC-JjC" secondAttribute="trailing" constant="50" id="1dN-A4-xt7"/>
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="centerX" secondItem="4Eg-qh-kcI" secondAttribute="centerX" id="2TO-w7-LcP"/>
+                            <constraint firstItem="gz6-hu-iQW" firstAttribute="trailing" secondItem="5rm-kk-WjO" secondAttribute="trailing" constant="50" id="7Ca-eL-HLN"/>
                             <constraint firstItem="gz6-hu-iQW" firstAttribute="bottom" secondItem="OAX-bC-JjC" secondAttribute="bottom" constant="48" id="8xS-sm-IFK"/>
+                            <constraint firstItem="OAX-bC-JjC" firstAttribute="top" secondItem="5rm-kk-WjO" secondAttribute="bottom" constant="253" id="Uj2-gv-Fn6"/>
+                            <constraint firstItem="5rm-kk-WjO" firstAttribute="leading" secondItem="gz6-hu-iQW" secondAttribute="leading" constant="50" id="Y3Z-QD-Nee"/>
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="top" secondItem="gz6-hu-iQW" secondAttribute="top" constant="694" id="gUb-71-7KP"/>
                             <constraint firstItem="OAX-bC-JjC" firstAttribute="leading" secondItem="gz6-hu-iQW" secondAttribute="leading" constant="50" id="mnM-45-Peh"/>
+                            <constraint firstItem="5rm-kk-WjO" firstAttribute="top" secondItem="gz6-hu-iQW" secondAttribute="top" constant="367" id="vck-QL-3V1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gz6-hu-iQW"/>
                     </view>
@@ -299,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J44-aS-fNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="139"/>
+            <point key="canvasLocation" x="1737.68115942029" y="138.61607142857142"/>
         </scene>
         <!--Closet-->
         <scene sceneID="haO-s4-zQD">
@@ -375,17 +379,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the closet page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-D9-B3z" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="134" y="392" width="169" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't seem to have any items here... Try adding some stuff to the closet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R28-dp-0UA">
+                                <rect key="frame" x="48" y="396" width="318" height="104"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="GFk-SM-fbg" firstAttribute="top" secondItem="R28-dp-0UA" secondAttribute="bottom" constant="238" id="5iC-iP-1uI"/>
+                            <constraint firstItem="R28-dp-0UA" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="48" id="5ji-ud-ekB"/>
+                            <constraint firstItem="R28-dp-0UA" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" constant="352" id="65h-bY-dpf"/>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="50" id="Ati-2r-yU6"/>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" constant="694" id="BSE-u0-dEq"/>
+                            <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="R28-dp-0UA" secondAttribute="trailing" constant="48" id="Dcd-TA-2HP"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="bottom" secondItem="GFk-SM-fbg" secondAttribute="bottom" constant="48" id="dBn-Lj-7ye"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="GFk-SM-fbg" secondAttribute="trailing" constant="50" id="qO6-Zn-XEW"/>
                         </constraints>
@@ -400,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80g-yb-x7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="139"/>
+            <point key="canvasLocation" x="2411.594202898551" y="138.61607142857142"/>
         </scene>
         <!--Socials Page-->
         <scene sceneID="ant-Mq-iFh">
@@ -478,17 +486,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="On the socials page :))" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-59-ZHv" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="131" y="418" width="174" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Socials under construction!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGb-IW-zKm">
+                                <rect key="frame" x="103" y="438" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HHk-gq-WBu" firstAttribute="leading" secondItem="cg4-vI-C2V" secondAttribute="leading" constant="50" id="AT3-1R-AsB"/>
+                            <constraint firstItem="KGb-IW-zKm" firstAttribute="leading" secondItem="cg4-vI-C2V" secondAttribute="leading" constant="103" id="QI5-eG-6bE"/>
+                            <constraint firstItem="HHk-gq-WBu" firstAttribute="top" secondItem="KGb-IW-zKm" secondAttribute="bottom" constant="279" id="XUf-cI-QE0"/>
                             <constraint firstItem="cg4-vI-C2V" firstAttribute="bottom" secondItem="HHk-gq-WBu" secondAttribute="bottom" constant="48" id="bxt-Cv-F2R"/>
+                            <constraint firstItem="cg4-vI-C2V" firstAttribute="trailing" secondItem="KGb-IW-zKm" secondAttribute="trailing" constant="102" id="eli-iC-egw"/>
+                            <constraint firstItem="KGb-IW-zKm" firstAttribute="top" secondItem="cg4-vI-C2V" secondAttribute="top" constant="394" id="frk-JV-st5"/>
                             <constraint firstItem="HHk-gq-WBu" firstAttribute="top" secondItem="cg4-vI-C2V" secondAttribute="top" constant="694" id="tcP-d4-MTU"/>
                             <constraint firstItem="cg4-vI-C2V" firstAttribute="trailing" secondItem="HHk-gq-WBu" secondAttribute="trailing" constant="50" id="uGm-3j-pnL"/>
                         </constraints>

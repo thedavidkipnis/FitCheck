@@ -19,7 +19,11 @@ class ViewController: UIViewController {
     
     var filterMenu = UIView()
     var filterMenuTable = UITableView()
-    var filterMenuHeight: CGFloat = 0
+    var filterMenuHeight: CGFloat = 40
+    
+    var filterOptions: [FilterOption] = [FilterOption(name:"0", value:"Tshirts"),
+    FilterOption(name:"0", value:"Denim"), FilterOption(name:"0", value:"Casual shorts")]
+
      
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
@@ -76,6 +80,7 @@ class ViewController: UIViewController {
     @IBAction func FilterClick(_ sender: UIButton) {
         filterMenuHeight = view.bounds.size.height - 100
         let window = self.view
+                
         filterMenu.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         filterMenu.frame = self.view.frame
         window?.addSubview(filterMenu)
@@ -93,8 +98,16 @@ class ViewController: UIViewController {
         
         let screenSize = UIScreen.main.bounds.size
         filterMenuTable.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: filterMenuHeight)
+        
+        //adding label to filter menu
+        let filterMenuTitleLabel = UIButton(frame: CGRect(x: 0, y:0, width: view.frame.width, height: 35))
+        filterMenuTitleLabel.setTitle("Filter Options", for: .normal)
+        filterMenuTitleLabel.backgroundColor = UIColor.systemOrange
+        filterMenuTable.addSubview(filterMenuTitleLabel)
+        
         filterMenuTable.separatorStyle = .none
         window?.addSubview(filterMenuTable)
+        
         
         UIView.animate(withDuration: 0.5,
                        delay: 0, usingSpringWithDamping: 1.0,
@@ -180,7 +193,7 @@ class ViewController: UIViewController {
             //case 1 - no need to regen card
             if regenFlag == false {
             UIView.animate(withDuration: 0.2, animations: {
-                card.center = CGPoint(x: self.view.center.x, y: ogy)
+                card.center = CGPoint(x: self.view.center.x, y: ogy + 11)
                 self.likeIcon.alpha = 0
                 self.dislikeIcon.alpha = 0
                 })
@@ -276,4 +289,3 @@ class ViewController: UIViewController {
         Card.bringSubviewToFront(dislikeIcon)
     }
 }
-
