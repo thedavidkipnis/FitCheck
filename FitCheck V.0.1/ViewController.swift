@@ -19,11 +19,8 @@ class ViewController: UIViewController {
     
     var filterMenu = UIView()
     var filterMenuTable = UITableView()
+    var filterMenuParams = FilterMenuTable()
     var filterMenuHeight: CGFloat = 40
-    
-    var filterOptions: [FilterOption] = [FilterOption(name:"0", value:"Tshirts"),
-    FilterOption(name:"0", value:"Denim"), FilterOption(name:"0", value:"Casual shorts")]
-
      
     //animating nav bar button clicks
     @IBAction func animateButton(sender: UIButton) {
@@ -99,15 +96,19 @@ class ViewController: UIViewController {
         let screenSize = UIScreen.main.bounds.size
         filterMenuTable.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: filterMenuHeight)
         
-        //adding label to filter menu
-        let filterMenuTitleLabel = UIButton(frame: CGRect(x: 0, y:0, width: view.frame.width, height: 35))
-        filterMenuTitleLabel.setTitle("Filter Options", for: .normal)
-        filterMenuTitleLabel.backgroundColor = UIColor.systemOrange
-        filterMenuTable.addSubview(filterMenuTitleLabel)
+        //adding all the filter menu views to filter menu display
+        filterMenuTable.addSubview(filterMenuParams.nameLabel)
+        filterMenuTable.addSubview(filterMenuParams.clearButton)
+        filterMenuParams.clearButton.addTarget(self, action: #selector(clearSelectedOptions), for: .touchUpInside)
+        for option in filterMenuParams.optionsArray {
+            filterMenuTable.addSubview(option)
+            option.addTarget(self, action: #selector(optionSelected), for: .touchUpInside)
+        }
         
+        //setting filter menu settings
         filterMenuTable.separatorStyle = .none
+        filterMenuTable.isScrollEnabled = false
         window?.addSubview(filterMenuTable)
-        
         
         UIView.animate(withDuration: 0.5,
                        delay: 0, usingSpringWithDamping: 1.0,
@@ -131,6 +132,44 @@ class ViewController: UIViewController {
           }, completion: nil)
     }
     
+    //animation and selection for a selected option button in the filter menu
+    @objc func optionSelected(_ sender: UIButton) {
+        if sender.backgroundColor?.cgColor.hashValue == 6431161961 {
+            sender.backgroundColor = UIColor.systemYellow
+        }
+        else if sender.backgroundColor?.cgColor.hashValue == 4933216050 {
+            sender.backgroundColor = UIColor.systemOrange
+        }
+        sender.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        UIView.animate(withDuration: 0.5,
+                                   delay: 0,
+                                   usingSpringWithDamping: CGFloat(0.20),
+                                   initialSpringVelocity: CGFloat(6.0),
+                                   options: UIView.AnimationOptions.allowUserInteraction,
+                                   animations: {
+                                    sender.transform = CGAffineTransform.identity
+            },
+                                   completion: { Void in()  }
+        )
+    }
+    
+    @objc func clearSelectedOptions(_ sender: UIButton) {
+        for option in filterMenuParams.optionsArray {
+            option.backgroundColor = UIColor.systemOrange
+        }
+        sender.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        UIView.animate(withDuration: 0.5,
+                                   delay: 0,
+                                   usingSpringWithDamping: CGFloat(0.20),
+                                   initialSpringVelocity: CGFloat(6.0),
+                                   options: UIView.AnimationOptions.allowUserInteraction,
+                                   animations: {
+                                    sender.transform = CGAffineTransform.identity
+            },
+                                   completion: { Void in()  }
+        )
+    }
+    
     //outlets for the card and the two like icons on the card for swiping
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var Card: UIImageView!
@@ -144,7 +183,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var closetButton: UIButton!
     @IBOutlet weak var likesButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
-    
+        
     //card Swiping
     @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
         var leftRotate = false

@@ -313,6 +313,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0n0-Ve-LeH">
+                                <rect key="frame" x="20" y="112" width="374" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFk-SM-fbg">
                                 <rect key="frame" x="50" y="738" width="314" height="76"/>
                                 <subviews>
@@ -379,27 +383,47 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't seem to have any items here... Try adding some stuff to the closet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R28-dp-0UA">
-                                <rect key="frame" x="48" y="396" width="318" height="104"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-Ef-fbk" userLabel="Logo">
+                                <rect key="frame" x="110" y="44" width="194" height="39"/>
+                                <color key="backgroundColor" red="1" green="0.92877995970000005" blue="0.56687647100000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.92877995970000005" blue="0.56687647100000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="FitCheck">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="28.5" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="GFk-SM-fbg" firstAttribute="top" secondItem="R28-dp-0UA" secondAttribute="bottom" constant="238" id="5iC-iP-1uI"/>
-                            <constraint firstItem="R28-dp-0UA" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="48" id="5ji-ud-ekB"/>
-                            <constraint firstItem="R28-dp-0UA" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" constant="352" id="65h-bY-dpf"/>
+                            <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="5eu-Ef-fbk" secondAttribute="trailing" constant="110" id="0f9-aC-wFP"/>
+                            <constraint firstItem="0n0-Ve-LeH" firstAttribute="bottom" secondItem="Pgw-gf-6dd" secondAttribute="bottom" id="7XD-8n-CBe"/>
+                            <constraint firstItem="5eu-Ef-fbk" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" id="8rT-WS-QMA"/>
+                            <constraint firstItem="Pgw-gf-6dd" firstAttribute="bottom" secondItem="5eu-Ef-fbk" secondAttribute="bottom" constant="779" id="9If-9i-CFP"/>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="50" id="Ati-2r-yU6"/>
                             <constraint firstItem="GFk-SM-fbg" firstAttribute="top" secondItem="Pgw-gf-6dd" secondAttribute="top" constant="694" id="BSE-u0-dEq"/>
-                            <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="R28-dp-0UA" secondAttribute="trailing" constant="48" id="Dcd-TA-2HP"/>
+                            <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="0n0-Ve-LeH" secondAttribute="trailing" constant="20" id="CtH-hg-sAr"/>
+                            <constraint firstItem="5eu-Ef-fbk" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="110" id="EHN-3P-5zy"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="bottom" secondItem="GFk-SM-fbg" secondAttribute="bottom" constant="48" id="dBn-Lj-7ye"/>
+                            <constraint firstItem="0n0-Ve-LeH" firstAttribute="top" secondItem="5eu-Ef-fbk" secondAttribute="bottom" constant="29" id="nRv-lq-Xzj"/>
+                            <constraint firstItem="0n0-Ve-LeH" firstAttribute="leading" secondItem="Pgw-gf-6dd" secondAttribute="leading" constant="20" id="oxJ-KZ-3Sx"/>
                             <constraint firstItem="Pgw-gf-6dd" firstAttribute="trailing" secondItem="GFk-SM-fbg" secondAttribute="trailing" constant="50" id="qO6-Zn-XEW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pgw-gf-6dd"/>
                     </view>
                     <connections>
+                        <outlet property="categoriesTable" destination="0n0-Ve-LeH" id="5sR-jC-5oU"/>
                         <outlet property="closetButton" destination="zsL-D1-g2n" id="vqK-0X-FP9"/>
                         <outlet property="likesButton" destination="Vwd-rk-UOv" id="uv4-4I-23n"/>
                         <outlet property="mainButton" destination="gfe-FL-CPD" id="vse-vg-h5A"/>
